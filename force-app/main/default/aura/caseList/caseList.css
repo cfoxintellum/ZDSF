@@ -1,0 +1,213 @@
+@font-face
+{
+    font-family:'Roboto';
+    src:url(/resource/Roboto);
+}
+
+
+.THIS {
+    font-family: 'Roboto';
+        font-size: 20px;
+}
+
+.THIS tbody td {
+    font-family: system-ui;
+}
+
+.THIS .header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.THIS .header .user-select label {
+    display: none;
+}
+
+.THIS .main th {
+    color: #5a5454;
+    font-size: 15px;
+}
+
+
+.THIS .sidebar .views {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-left: 10px;
+    justify-content: space-between;
+    margin-right: 10px;
+    margin-top: 15px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #ebebeb;
+}
+
+.THIS .sidebar .views button:focus {
+    box-shadow: none;
+    border: none;
+}
+
+.THIS .sidebar .views button {
+    border: none;
+    background: transparent;
+    color: black;
+    padding: 0px;
+}
+
+
+
+.THIS thead::after {
+    bottom: -2px;
+    border-bottom: 4px solid #ebebeb;
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+    
+
+
+.cCaseList.container {
+    height: inherit;
+    display: flex;
+    background-color: white;
+}
+
+
+
+
+.THIS.container > .slds-grid {
+    width: 100%;
+    display: flex;
+}
+
+
+.THIS .sidebar {
+    width: 200px;
+    border-right-style: solid;
+    height: 100%;
+    background-color: #f8f8f8;
+    border-right-color: #ebebeb;
+}
+
+.THIS .main {
+    width: calc(100% - 200px);
+    overflow-y: scroll;
+    padding-left: 10px;
+    height: 81vh;
+    scrollbar-width: thin;
+}
+
+.THIS .main tbody tr {
+    border-bottom-style: solid;
+    border-bottom-color: #e5e5e5;
+}
+
+.THIS .main tbody tr:hover {
+    background-color: #efefef;
+    cursor: pointer;
+}
+
+.THIS .main tbody tr td {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-size: 15px;
+}
+
+.THIS tbody .case-id {
+    font-weight: 600;
+    font-size: 14px !important;
+}
+
+.THIS .main tbody tr td.New, .THIS .main tbody tr td.Customer.Awaiting.Response, .THIS .main tbody tr td.In.Progress {
+    color: #e00303;
+}
+
+.THIS .main tbody tr td.Waiting.for.Customer {
+    color: #008bcf;
+}
+
+.THIS .main tbody tr td.Engineering.Review {
+    color: #006815;
+}
+
+.THIS .status-button:has(.active) {
+    background-color: #e5e6eb;
+}
+
+.THIS .status-button {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.THIS .status-button .case-number {
+    margin-right: 15px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.THIS .status-button button {
+    width: 100%;
+    border-style: none;
+    font-weight: 600;
+    display: flex;
+    justify-content: flex-start;
+    background-color: rgb(227 227 227 / 0%);
+    color: black;
+    font-size: 16px;
+}
+
+.THIS .status-button button:focus {
+ color:black;
+}
+
+.THIS .status-button button:hover {
+    background-color: #e5e6eb;
+}
+
+.THIS .status-button button:focus {
+    box-shadow: none;
+}
+
+.THIS .status-button:hover {
+    background-color: #e5e6eb;
+}
+
+.THIS .main thead {
+    position: sticky;
+    top: 0px;
+    background: white;
+}
+
+.THIS .main thead th:nth-child(1) {
+    width: 100px;
+}
+
+.THIS .main thead th:nth-child(2) {
+    width: 22px;
+}
+
+.THIS .main thead th:nth-child(4) {
+    width: 160px;
+}
+
+.THIS .main thead th:nth-child(5) {
+    width: 100px;
+}
+
+.cCaseList {
+    height: inherit;
+    display: flex;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #eeeeee;
+    border-radius: 5px;
+}

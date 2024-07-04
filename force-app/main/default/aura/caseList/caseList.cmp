@@ -1,0 +1,81 @@
+<aura:component implements="force:appHostable" controller="CaseController">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    
+    
+    <aura:attribute name="cases" type="Case[]"/>
+    <aura:attribute name="caseList" type="Case[]"/>
+    <aura:attribute name="totalCases" type="Integer"/>
+    <aura:attribute name="totalNewCases" type="Integer"/>
+    <aura:attribute name="totalPendingCases" type="Integer"/>
+    <aura:attribute name="totalOnHoldCases" type="Integer"/>
+    <aura:attribute name="totalClosedCases" type="Integer"/>
+    <aura:attribute name="currentSelection" type="String" default="Open"/>
+    <aura:attribute name="currentNumTickets" type="Integer"/>
+    <aura:attribute name="users" type="User[]"/>
+    <aura:attribute name="loggedInID" type="String"/>
+    <aura:attribute name="loggedInName" type="String"/>
+
+    <ltng:require styles="{!$Resource.fontawesome + '/fontawesome/css/all.css'}" /> 
+
+<div class="container">
+    <lightning:layout>
+        <lightning:layoutItem class="sidebar">
+
+            <div class="views">
+                <p>Views</p>
+                <lightning:button onclick="{!c.doInit}"><i class="fa-solid fa-arrows-rotate"></i></lightning:button>
+                
+                
+            </div>
+
+            <div class="status-button"><lightning:button aura:id="btnopen" name="open" label="Open" onclick="{!c.handleSelect}" class="active" /> <p class="case-number">{!v.totalNewCases}</p></div>
+            <div class="status-button"><lightning:button aura:id="btnpending" name="pending" label="Pending" onclick="{!c.handleSelect}" /><p class="case-number">{!v.totalPendingCases}</p></div>
+            <div class="status-button"><lightning:button aura:id="btnonhold" name="onhold" label="On Hold" onclick="{!c.handleSelect}" /><p class="case-number">{!v.totalOnHoldCases}</p></div>
+            <div class="status-button"><lightning:button aura:id="btnclosed" name="closed" label="Closed" onclick="{!c.handleSelect}" /><p class="case-number">{!v.totalClosedCases}</p></div>
+        </lightning:layoutItem>
+        <lightning:layoutItem class="main">
+
+        <div class="header">
+            <p><span>{!v.currentSelection}</span><span> Tickets</span></p>
+            
+            <lightning:select aura:id="select" name="selectusers" onchange="{!c.handleUserSelect}" class="user-select">
+                <option value="{!v.loggedInID}">{!v.loggedInName}</option>
+                <aura:iteration items="{!v.users}" var="user">
+                    <option value="{!user.Id}" text="{!user.Name}"></option>
+                </aura:iteration>
+            </lightning:select>
+
+
+
+
+        </div>
+            
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th></th>
+                    <th>Subject</th>
+                    <th>Submitter</th>
+                    <th>Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            <aura:iteration var="case" items="{!v.cases}">
+                <c:cases case="{!case}"/>
+            </aura:iteration>
+
+            </tbody>
+        </table>
+
+
+
+        </lightning:layoutItem>
+    </lightning:layout>
+</div>
+
+    
+    
+</aura:component>
