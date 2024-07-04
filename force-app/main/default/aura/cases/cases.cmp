@@ -1,0 +1,13 @@
+<aura:component>
+    <aura:attribute name="case" type="Case" />
+
+    <tr onclick="{!c.goToRecord}">
+        <td class="case-id">{!v.case.CaseNumber}</td>
+        <td class="{!v.case.Status}"><i class="fa-solid fa-square-minus"></i></td>
+        <td>{!v.case.Subject}</td>
+        <td>{!v.case.Account.Name}</td>
+        <td><ui:outputDate value="{!v.case.CreatedDate}"/></td>
+                   
+    </tr>
+
+</aura:component>
